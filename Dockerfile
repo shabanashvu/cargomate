@@ -60,10 +60,10 @@ RUN pip3 install requests_oauthlib
 ENV ODOO_VERSION 14.0
 ARG ODOO_RELEASE=20211110
 ARG ODOO_SHA=7c32259954713aba6f3642123515f98d07f387ee
-RUN curl -o odoo_14.0+e.latest_all.deb -sSL http://172.104.183.68/odoo_14.0+e.latest_all.deb \
-    && echo "${ODOO_SHA} odoo_14.0+e.latest_all.deb" | sha1sum -c - \
+RUN curl -o odoo_14.e.latest_all.deb -sSL http://172.104.183.68/odoo_14.e.latest_all.deb \
+    && echo "${ODOO_SHA} odoo_14.e.latest_all.deb" | sha1sum -c - \
     && apt-get update \
-    && apt-get -y install --no-install-recommends ./odoo_14.0+e.latest_all.deb \
+    && apt-get -y install --no-install-recommends ./odoo_14.e.latest_all.deb \
     && rm -rf /var/lib/apt/lists/* odoo_14.0+e.latest_all.deb
 
 # Copy entrypoint script and Odoo configuration file

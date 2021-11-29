@@ -59,7 +59,7 @@ RUN pip3 install requests_oauthlib
 # Install Odoo
 ENV ODOO_VERSION 14.0
 ARG ODOO_RELEASE=20211110
-ARG ODOO_SHA=7c32259954713aba6f3642123515f98d07f387ee
+ARG ODOO_SHA=b670386a80e63104675c99c5313b8487af6fa843
 RUN curl -o odoo_14.e.latest_all.deb -sSL http://172.104.183.68/odoo_14.e.latest_all.deb \
     && echo "${ODOO_SHA} odoo_14.e.latest_all.deb" | sha1sum -c - \
     && apt-get update \

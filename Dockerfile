@@ -5,7 +5,7 @@ SHELL ["/bin/bash", "-xo", "pipefail", "-c"]
 
 # Generate locale C.UTF-8 for postgres and general locale data
 ENV LANG C.UTF-8
-ENV TZ=Asia/Dubai
+ENV TZ=Asia/Riyadh
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 # Install some deps, lessc and less-plugin-clean-css, and wkhtmltopdf
 RUN apt-get update && \
@@ -55,7 +55,6 @@ RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/
 RUN npm install -g rtlcss
 RUN pip3 install requests
 RUN pip3 install oauthlib 
-RUN pip3 install pyzk
 RUN pip3 install requests_oauthlib
 # Install Odoo
 ENV ODOO_VERSION 14.0
